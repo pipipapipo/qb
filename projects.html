@@ -1,19 +1,106 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Project portfolio of QB Engineering & Construction."><title>Projects | QB Engineering & Construction</title><link rel="stylesheet" href="assets/css/styles.css"></head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — TECTON</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
 <body>
-<header class="site-header"><div class="container nav"><a class="brand" href="index.html" aria-label="QB Engineering & Construction home"><span class="brand-mark">QB</span><span class="brand-copy">QB Engineering <small>&amp; Construction</small></span></a><button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false">☰</button><nav class="nav-links" aria-label="Primary navigation"><a href="index.html">Home</a><a href="about.html">About us</a><a href="services.html">Services</a><a class="active" href="projects.html">Projects</a><a href="contact.html">Contact</a></nav></div></header>
-<main>
-<section class="page-hero"><div class="container"><div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Projects</span></div><h1>Work that reflects our standards.</h1><p>Your project portfolio is one of the strongest trust-builders on the site. Use your own photos and short, factual summaries of completed work.</p></div></section>
-<section class="section"><div class="container"><p class="eyebrow">Portfolio</p><h2 class="section-title">Selected projects.</h2><p class="section-intro">The cards below are placeholders. Replace each title, category, image and description with completed projects that you are permitted to share.</p>
-<div class="project-grid">
-<article class="project-card"><div class="project-image project-image--one"><span class="status">Replace with photo</span></div><div class="card-body"><div class="project-meta"><span>Commercial</span><span>YEAR / LOCATION</span></div><h3>Commercial Space Improvement</h3><p>Summarise the client requirement, your scope and the delivered outcome in two to three sentences.</p></div></article>
-<article class="project-card"><div class="project-image project-image--two"><span class="status">Replace with photo</span></div><div class="card-body"><div class="project-meta"><span>Residential</span><span>YEAR / LOCATION</span></div><h3>Residential Enhancement Works</h3><p>Example: coordinated targeted repair and enhancement works to improve function, appearance and handover readiness.</p></div></article>
-<article class="project-card"><div class="project-image project-image--three"><span class="status">Replace with photo</span></div><div class="card-body"><div class="project-meta"><span>Industrial</span><span>YEAR / LOCATION</span></div><h3>Facility Upgrade Project</h3><p>Example: supported the phased delivery of upgrade works while helping to minimise operational disruption.</p></div></article>
-<article class="project-card"><div class="project-image project-image--four"><span class="status">Replace with photo</span></div><div class="card-body"><div class="project-meta"><span>External works</span><span>YEAR / LOCATION</span></div><h3>External Works &amp; Improvements</h3><p>Example: delivered site improvement works focused on access, finishes, durability and safe completion.</p></div></article>
-</div></div></section>
-<section class="section section--soft"><div class="container two-col"><article class="panel"><p class="eyebrow">Before uploading project images</p><h2>Use project photos strategically.</h2><div class="checks"><div class="check">Choose one strong overall photo, then add one or two detail images per project later.</div><div class="check">Use images you own or have permission to publish. Avoid identifiable client information where not approved.</div><div class="check">Keep each image under about 1 MB after resizing for faster loading on mobile.</div></div></article><article class="panel"><p class="eyebrow">Suggested project format</p><h2>Keep each case study concise.</h2><p><strong>Project title</strong><br>Project type · year · general location</p><p><strong>Challenge:</strong> What the client needed.</p><p><strong>Scope:</strong> What QB did.</p><p><strong>Outcome:</strong> The practical result delivered.</p></article></div></section>
-<section class="cta"><div class="container section cta-inner"><h2>Planning a similar project? Let’s discuss your requirements.</h2><a class="btn btn--primary" href="contact.html">Contact QB</a></div></section>
-</main>
-<footer class="site-footer"><div class="container footer-grid"><div><a class="brand" href="index.html"><span class="brand-mark">QB</span><span class="brand-copy">QB Engineering <small>&amp; Construction</small></span></a><p class="footer-blurb">Practical engineering and construction support, delivered with a focus on quality, clarity and dependable coordination.</p></div><div><h2 class="footer-title">Explore</h2><nav class="footer-links"><a href="about.html">About us</a><a href="services.html">Services</a><a href="projects.html">Projects</a><a href="contact.html">Contact</a></nav></div><div><h2 class="footer-title">Contact</h2><div class="footer-links"><a href="mailto:YOUR-EMAIL@example.com">YOUR-EMAIL@example.com</a><span>YOUR PHONE NUMBER</span><span>YOUR CITY / SERVICE AREA</span></div></div></div><div class="container footer-bottom"><span>© <span id="year"></span> QB Engineering &amp; Construction. All rights reserved.</span><span>Built for GitHub Pages.</span></div></footer>
-<script src="assets/js/script.js"></script><script>document.getElementById('year').textContent = new Date().getFullYear();</script></body></html>
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20 L12 4 L20 20"/><path d="M8.5 14 L15.5 14"/></svg></span>
+        <span class="logo-text">TECTON.</span>
+      </a>
+      <button class="nav-toggle" onclick="toggleNav()" aria-label="Menu">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">INDEX</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="services.html">SERVICES</a></li>
+        <li><a href="projects.html" class="active">PROJECTS</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="container section">
+        <div class="eyebrow">// PROJECTS — ARCHIVE</div>
+        <h1 class="h1 reveal" style="margin-top:16px">The<br /><span style="color:var(--accent)">archive.</span></h1>
+        <p class="muted reveal" style="margin-top:32px;max-width:640px;font-size:18px">A selection of completed structures. Each one a study in scale, material, and endurance.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container section">
+        <div class="proj-grid">
+          <button class="proj span-7 reveal"
+            data-title="Meridian Tower" data-year="2024" data-loc="Singapore" data-cat="High-Rise"
+            data-img="https://media.base44.com/images/public/6a4bd4a3d244490cb5c55be6/fefc583c7_generated_157d897b.png"
+            data-desc="A 68-storey composite steel-and-glass tower engineered for tropical wind loads and seismic resilience.">
+            <img src="https://media.base44.com/images/public/6a4bd4a3d244490cb5c55be6/fefc583c7_generated_157d897b.png" alt="Meridian Tower" />
+            <span class="tag">2024 / SINGAPORE</span>
+            <span class="cap"><span class="cat">HIGH-RISE</span><h3>Meridian Tower</h3></span>
+          </button>
+          <button class="proj span-5 reveal"
+            data-title="Aether Crossing" data-year="2023" data-loc="Norway" data-cat="Bridge"
+            data-img="https://media.base44.com/images/public/6a4bd4a3d244490cb5c55be6/4e0262abe_generated_6addfd53.png"
+            data-desc="Cable-stayed bridge spanning a 420m fjord crossing, built to endure arctic conditions.">
+            <img src="https://media.base44.com/images/public/6a4bd4a3d244490cb5c55be6/4e0262abe_generated_6addfd53.png" alt="Aether Crossing" />
+            <span class="tag">2023 / NORWAY</span>
+            <span class="cap"><span class="cat">BRIDGE</span><h3>Aether Crossing</h3></span>
+          </button>
+          <button class="proj span-5 reveal"
+            data-title="Strata Cultural Center" data-year="2022" data-loc="Berlin" data-cat="Cultural"
+            data-img="https://media.base44.com/images/public/6a4bd4a3d244490cb5c55be6/9eec90af6_generated_e54bf16c.png"
+            data-desc="Board-formed brutalist concrete cultural landmark with long-span column-free galleries.">
+            <img src="https://media.base44.com/images/public/6a4bd4a3d244490cb5c55be6/9eec90af6_generated_e54bf16c.png" alt="Strata Cultural Center" />
+            <span class="tag">2022 / BERLIN</span>
+            <span class="cap"><span class="cat">CULTURAL</span><h3>Strata Cultural Center</h3></span>
+          </button>
+          <button class="proj span-7 reveal"
+            data-title="Helix Data Center" data-year="2021" data-loc="Dublin" data-cat="Infrastructure"
+            data-img="https://media.base44.com/images/public/6a4bd4a3d244490cb5c55be6/b7eda550a_generated_c4cbc941.png"
+            data-desc="High-availability data facility with precision structural and thermal engineering.">
+            <img src="https://media.base44.com/images/public/6a4bd4a3d244490cb5c55be6/b7eda550a_generated_c4cbc941.png" alt="Helix Data Center" />
+            <span class="tag">2021 / DUBLIN</span>
+            <span class="cap"><span class="cat">INFRASTRUCTURE</span><h3>Helix Data Center</h3></span>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <div class="ruler"></div>
+    <button class="close" aria-label="Close">✕</button>
+    <div class="lb-inner">
+      <div class="lb-img"><img id="lbImg" src="" alt="" /></div>
+      <div>
+        <div class="lb-cat" id="lbCat"></div>
+        <h3 class="lb-title" id="lbTitle"></h3>
+        <div class="lb-meta" id="lbMeta"></div>
+        <p class="lb-desc" id="lbDesc"></p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="f5"><div class="logo-text">TECTON.</div><p>Engineering &amp; construction. We build structural legacies with precision, scale, and material integrity.</p></div>
+      <div class="f3"><div class="footer-h">NAVIGATE</div><ul><li><a href="index.html">Index</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="projects.html">Projects</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="f4"><div class="footer-h">COORDINATES</div><ul><li>hello@tecton-eng.com</li><li>INSTAGRAM // @tecton.eng</li><li>FACEBOOK // /tecton.eng</li></ul></div>
+    </div>
+    <div class="footer-bottom"><div class="footer-bottom-inner"><span>© <span id="year"></span> TECTON ENGINEERING &amp; CONSTRUCTION</span><span>BUILT TO ENDURE</span></div></div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
