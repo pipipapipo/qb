@@ -1,124 +1,84 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="QB Engineering & Construction — practical engineering and construction solutions delivered with care, clarity and quality.">
-  <title>QB Engineering & Construction | Build with confidence</title>
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — TECTON</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="index.html" aria-label="QB Engineering & Construction home">
-        <span class="brand-mark">QB</span><span class="brand-copy">QB Engineering <small>&amp; Construction</small></span>
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20 L12 4 L20 20"/><path d="M8.5 14 L15.5 14"/></svg></span>
+        <span class="logo-text">TECTON.</span>
       </a>
-      <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false">☰</button>
-      <nav class="nav-links" aria-label="Primary navigation">
-        <a class="active" href="index.html">Home</a><a href="about.html">About us</a><a href="services.html">Services</a><a href="projects.html">Projects</a><a href="contact.html">Contact</a>
-      </nav>
+      <button class="nav-toggle" onclick="toggleNav()" aria-label="Menu">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">INDEX</a></li>
+        <li><a href="about.html" class="active">ABOUT</a></li>
+        <li><a href="services.html">SERVICES</a></li>
+        <li><a href="projects.html">PROJECTS</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+      </ul>
     </div>
   </header>
 
   <main>
-    <section class="hero">
-      <div class="hero-art" aria-hidden="true"></div>
-      <div class="container hero-inner">
-        <div class="hero-copy">
-          <p class="eyebrow">Engineering · Construction · Project Delivery</p>
-          <h1>Built with precision. Delivered with purpose.</h1>
-          <p>QB Engineering &amp; Construction supports clients with practical, dependable solutions—from early planning through to quality completion.</p>
-          <div class="hero-actions">
-            <a class="btn btn--primary" href="projects.html">View our projects</a>
-            <a class="btn btn--outline" href="contact.html">Start an enquiry</a>
-          </div>
+    <section>
+      <div class="container section">
+        <div class="eyebrow">// ABOUT — 01</div>
+        <h1 class="h1 reveal" style="margin-top:16px">Built to<br /><span style="color:var(--accent)">endure.</span></h1>
+      </div>
+    </section>
+
+    <section>
+      <div class="container section split-12">
+        <div class="col-4">
+          <div class="mono" style="font-size:12px;letter-spacing:.25em;color:var(--muted)">EST. 1998</div>
+          <div class="mono" style="font-size:12px;letter-spacing:.25em;color:var(--muted);margin-top:8px">HQ — GLOBAL</div>
+        </div>
+        <div class="col-8" style="font-size:20px;line-height:1.6">
+          <p class="reveal">Founded in 1998, TECTON is an engineering and construction practice built on a single principle: structures should endure. From skeletal steel frames to board-formed concrete, we design and deliver the systems that hold the modern world together.</p>
+          <p class="muted reveal" style="margin-top:24px">Our work spans skyscrapers, bridges, cultural landmarks, and critical infrastructure across twelve countries — each one measured against the same standard of structural integrity. We treat the viewport as a blueprint in motion, where every element is load-bearing.</p>
+          <p class="muted reveal" style="margin-top:24px">We are engineers, builders, and problem-solvers. We do not chase the safety-yellow cliché. We pursue the art of building — cold, precise, monumental.</p>
         </div>
       </div>
     </section>
 
-    <section class="stats" aria-label="Company highlights">
-      <div class="container stats-grid">
-        <article class="stat"><strong>Quality-first</strong><span>Work delivered with care and attention to detail</span></article>
-        <article class="stat"><strong>End-to-end</strong><span>Clear coordination from planning to handover</span></article>
-        <article class="stat"><strong>Client-focused</strong><span>Practical solutions matched to your needs</span></article>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container feature-grid">
-        <div class="blueprint" aria-label="Abstract engineering drawing illustration" role="img">
-          <div class="blueprint-badge"><small>Our approach</small><strong>Plan clearly. Build responsibly.</strong></div>
-        </div>
-        <div>
-          <p class="eyebrow">A dependable project partner</p>
-          <h2 class="section-title">Straightforward engineering and construction support.</h2>
-          <p class="section-intro">We work closely with clients, consultants and contractors to keep every project organised, transparent and focused on the result.</p>
-          <div class="checks">
-            <div class="check">Clear scope, timelines and communication throughout the project.</div>
-            <div class="check">A practical mindset that balances quality, cost and site realities.</div>
-            <div class="check">Hands-on coordination to help projects move forward smoothly.</div>
-          </div>
-          <a class="btn btn--blue" href="about.html">Learn about QB</a>
+    <section>
+      <div class="container section">
+        <div class="eyebrow" style="margin-bottom:40px">// PRINCIPLES</div>
+        <div class="grid2">
+          <div class="cell reveal"><span class="num">01</span><h3>Precision</h3><p>Every dimension calculated, every joint accounted for. Tolerances measured in millimetres.</p></div>
+          <div class="cell reveal"><span class="num">02</span><h3>Material Integrity</h3><p>We specify the right material for the load — steel, concrete, glass — never compromise.</p></div>
+          <div class="cell reveal"><span class="num">03</span><h3>Endurance</h3><p>We design for the next century, not the next quarter. Structures that outlast trends.</p></div>
+          <div class="cell reveal"><span class="num">04</span><h3>Accountability</h3><p>From groundbreaking to handover, we own the outcome. Budget, schedule, quality.</p></div>
         </div>
       </div>
     </section>
 
-    <section class="section section--soft">
-      <div class="container">
-        <p class="eyebrow">What we do</p>
-        <h2 class="section-title">Services tailored to the work on the ground.</h2>
-        <p class="section-intro">This starter site uses broad service categories. Replace these with the actual services, certifications and specialisations offered by your company.</p>
-        <div class="card-grid">
-          <article class="service-card">
-            <div class="card-art card-art--construction"><span class="card-number">01 / Construction</span></div>
-            <div class="card-body"><h3>Construction &amp; Renovation</h3><p>Coordinated delivery for building, renovation and improvement works, with quality and site safety kept in view.</p><a class="text-link" href="services.html">Explore service</a></div>
-          </article>
-          <article class="service-card">
-            <div class="card-art card-art--engineering"><span class="card-number">02 / Engineering</span></div>
-            <div class="card-body"><h3>Engineering Support</h3><p>Practical technical support for planning, coordination, assessments and solution development.</p><a class="text-link" href="services.html">Explore service</a></div>
-          </article>
-          <article class="service-card">
-            <div class="card-art card-art--management"><span class="card-number">03 / Delivery</span></div>
-            <div class="card-body"><h3>Project Management</h3><p>Structured coordination across stakeholders, workstreams, schedules and on-site activities.</p><a class="text-link" href="services.html">Explore service</a></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <p class="eyebrow">Selected work</p>
-        <h2 class="section-title">Projects that show how we work.</h2>
-        <p class="section-intro">Use this section to feature completed work with your own photos, project type, location and a short description of the outcome.</p>
-        <div class="project-grid">
-          <article class="project-card">
-            <div class="project-image project-image--one"><span class="status">Featured project</span></div>
-            <div class="card-body"><div class="project-meta"><span>Commercial</span><span>Project portfolio</span></div><h3>Commercial Space Improvement</h3><p>Replace this sample card with an actual completed project, including a photo and brief project summary.</p><a class="text-link" href="projects.html">See all projects</a></div>
-          </article>
-          <article class="project-card">
-            <div class="project-image project-image--two"><span class="status">Featured project</span></div>
-            <div class="card-body"><div class="project-meta"><span>Residential</span><span>Project portfolio</span></div><h3>Residential Enhancement Works</h3><p>Show the project objective, your role and the finished result without sharing sensitive client details.</p><a class="text-link" href="projects.html">See all projects</a></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="cta">
-      <div class="container section cta-inner">
-        <h2>Have a project in mind? Let’s discuss a practical way forward.</h2>
-        <a class="btn btn--primary" href="contact.html">Contact QB</a>
+    <section>
+      <div class="container section" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px">
+        <p style="font-size:24px;font-weight:600">See what we've built.</p>
+        <a href="projects.html" class="btn btn-outline">VIEW PROJECTS →</a>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div><a class="brand" href="index.html"><span class="brand-mark">QB</span><span class="brand-copy">QB Engineering <small>&amp; Construction</small></span></a><p class="footer-blurb">Practical engineering and construction support, delivered with a focus on quality, clarity and dependable coordination.</p></div>
-      <div><h2 class="footer-title">Explore</h2><nav class="footer-links"><a href="about.html">About us</a><a href="services.html">Services</a><a href="projects.html">Projects</a><a href="contact.html">Contact</a></nav></div>
-      <div><h2 class="footer-title">Contact</h2><div class="footer-links"><a href="mailto:YOUR-EMAIL@example.com">YOUR-EMAIL@example.com</a><span>YOUR PHONE NUMBER</span><span>YOUR CITY / SERVICE AREA</span></div></div>
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="f5"><div class="logo-text">TECTON.</div><p>Engineering &amp; construction. We build structural legacies with precision, scale, and material integrity.</p></div>
+      <div class="f3"><div class="footer-h">NAVIGATE</div><ul><li><a href="index.html">Index</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="projects.html">Projects</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="f4"><div class="footer-h">COORDINATES</div><ul><li>hello@tecton-eng.com</li><li>INSTAGRAM // @tecton.eng</li><li>FACEBOOK // /tecton.eng</li></ul></div>
     </div>
-    <div class="container footer-bottom"><span>© <span id="year"></span> QB Engineering &amp; Construction. All rights reserved.</span><span>Built for GitHub Pages.</span></div>
+    <div class="footer-bottom"><div class="footer-bottom-inner"><span>© <span id="year"></span> TECTON ENGINEERING &amp; CONSTRUCTION</span><span>BUILT TO ENDURE</span></div></div>
   </footer>
-  <script src="assets/js/script.js"></script><script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+  <script src="script.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
