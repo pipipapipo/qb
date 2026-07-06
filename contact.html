@@ -1,20 +1,82 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Contact QB Engineering & Construction."><title>Contact us | QB Engineering & Construction</title><link rel="stylesheet" href="assets/css/styles.css"></head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — TECTON</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
 <body>
-<header class="site-header"><div class="container nav"><a class="brand" href="index.html" aria-label="QB Engineering & Construction home"><span class="brand-mark">QB</span><span class="brand-copy">QB Engineering <small>&amp; Construction</small></span></a><button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false">☰</button><nav class="nav-links" aria-label="Primary navigation"><a href="index.html">Home</a><a href="about.html">About us</a><a href="services.html">Services</a><a href="projects.html">Projects</a><a class="active" href="contact.html">Contact</a></nav></div></header>
-<main>
-<section class="page-hero"><div class="container"><div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Contact</span></div><h1>Let’s discuss your project.</h1><p>Make it straightforward for clients to reach you. This page uses direct email and social links, which work well on a simple GitHub Pages website.</p></div></section>
-<section class="section"><div class="container contact-grid"><div><p class="eyebrow">Get in touch</p><h2 class="section-title">Tell us what you need.</h2><p class="section-intro">For project enquiries, include the location, type of work, expected timeline and any drawings or photos that may help us understand the scope.</p>
-<div class="contact-options">
-<a class="contact-option" href="mailto:YOUR-EMAIL@example.com?subject=Project%20Enquiry%20-%20QB%20Engineering%20%26%20Construction"><span class="contact-icon">@</span><span><strong>Email us</strong><span>YOUR-EMAIL@example.com</span></span></a>
-<a class="contact-option" href="https://www.facebook.com/YOUR-PAGE" target="_blank" rel="noreferrer"><span class="contact-icon">f</span><span><strong>Facebook</strong><span>facebook.com/YOUR-PAGE</span></span></a>
-<a class="contact-option" href="https://www.instagram.com/YOUR-HANDLE" target="_blank" rel="noreferrer"><span class="contact-icon">◎</span><span><strong>Instagram</strong><span>@YOUR-HANDLE</span></span></a>
-<a class="contact-option" href="tel:YOUR-PHONE-NUMBER"><span class="contact-icon">⌕</span><span><strong>Call / WhatsApp</strong><span>YOUR PHONE NUMBER</span></span></a>
-</div></div>
-<aside class="qr-panel"><p class="eyebrow">Quick contact</p><h2>Scan to connect</h2><p>Replace this sample image with a real QR code that opens your WhatsApp chat, Facebook page, Instagram profile or a direct email.</p><div class="qr-wrap"><img src="assets/images/qr-placeholder.svg" alt="Placeholder QR code to be replaced with your company contact QR code"></div><a class="btn btn--blue" href="mailto:YOUR-EMAIL@example.com?subject=Project%20Enquiry%20-%20QB%20Engineering%20%26%20Construction">Email QB</a><div class="notice"><strong>Before going live:</strong> replace every item marked <code>YOUR-...</code>, including the email address, phone number, Facebook page, Instagram handle and QR image.</div></aside>
-</div></section>
-<section class="section section--soft"><div class="container two-col"><article class="panel"><p class="eyebrow">Suggested enquiry details</p><h2>What to ask clients for</h2><div class="checks"><div class="check">Project location and type of property or facility.</div><div class="check">Brief description of the work needed.</div><div class="check">Target timing and any site access limitations.</div><div class="check">Relevant photos, drawings or reference documents.</div></div></article><article class="panel"><p class="eyebrow">Service area</p><h2>YOUR CITY / SERVICE AREA</h2><p>Add the areas you serve here. This helps search visitors decide quickly whether they should enquire.</p><p class="small-copy">Example: “Serving Metro Manila, Cavite and nearby project locations.” Only state areas where you genuinely operate.</p></article></div></section>
-</main>
-<footer class="site-footer"><div class="container footer-grid"><div><a class="brand" href="index.html"><span class="brand-mark">QB</span><span class="brand-copy">QB Engineering <small>&amp; Construction</small></span></a><p class="footer-blurb">Practical engineering and construction support, delivered with a focus on quality, clarity and dependable coordination.</p></div><div><h2 class="footer-title">Explore</h2><nav class="footer-links"><a href="about.html">About us</a><a href="services.html">Services</a><a href="projects.html">Projects</a><a href="contact.html">Contact</a></nav></div><div><h2 class="footer-title">Contact</h2><div class="footer-links"><a href="mailto:YOUR-EMAIL@example.com">YOUR-EMAIL@example.com</a><span>YOUR PHONE NUMBER</span><span>YOUR CITY / SERVICE AREA</span></div></div></div><div class="container footer-bottom"><span>© <span id="year"></span> QB Engineering &amp; Construction. All rights reserved.</span><span>Built for GitHub Pages.</span></div></footer>
-<script src="assets/js/script.js"></script><script>document.getElementById('year').textContent = new Date().getFullYear();</script></body></html>
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20 L12 4 L20 20"/><path d="M8.5 14 L15.5 14"/></svg></span>
+        <span class="logo-text">TECTON.</span>
+      </a>
+      <button class="nav-toggle" onclick="toggleNav()" aria-label="Menu">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">INDEX</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="services.html">SERVICES</a></li>
+        <li><a href="projects.html">PROJECTS</a></li>
+        <li><a href="contact.html" class="active">CONTACT</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="container section">
+        <div class="eyebrow">// CONTACT — TERMINAL</div>
+        <h1 class="h1 reveal" style="margin-top:16px">The<br /><span style="color:var(--accent)">terminal.</span></h1>
+      </div>
+    </section>
+
+    <section>
+      <div class="contact-split">
+        <div class="contact-side left">
+          <div class="eyebrow">// CONNECT</div>
+          <div class="social-list">
+            <a href="https://instagram.com/tecton.eng" target="_blank" rel="noreferrer"><span>INSTAGRAM</span><span>@tecton.eng</span></a>
+            <a href="https://facebook.com/tecton.eng" target="_blank" rel="noreferrer"><span>FACEBOOK</span><span>/tecton.eng</span></a>
+            <a href="mailto:hello@tecton-eng.com"><span>EMAIL</span><span>hello@tecton-eng.com</span></a>
+          </div>
+        </div>
+        <div class="contact-side">
+          <div class="eyebrow">// SEND A MESSAGE</div>
+          <form id="contactForm" style="margin-top:32px">
+            <div class="field"><label>NAME</label><input type="text" required placeholder="Your name" /></div>
+            <div class="field"><label>EMAIL</label><input type="email" required placeholder="you@company.com" /></div>
+            <div class="field"><label>MESSAGE</label><textarea rows="4" required placeholder="Tell us about your project..."></textarea></div>
+            <button type="submit" class="btn btn-primary" style="margin-top:32px">TRANSMIT →</button>
+            <p class="form-status" id="formStatus">// SIGNAL RECEIVED. WE'LL RESPOND WITHIN 48H.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="coords-strip">
+        <div><h4>STUDIO</h4><p>12 Foundry Quarter<br />Industrial District</p></div>
+        <div><h4>HOURS</h4><p>MON–FRI / 08:00–18:00<br />SAT / BY APPOINTMENT</p></div>
+        <div><h4>DIRECT</h4><p>+1 (555) 010-1998<br />hello@tecton-eng.com</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="f5"><div class="logo-text">TECTON.</div><p>Engineering &amp; construction. We build structural legacies with precision, scale, and material integrity.</p></div>
+      <div class="f3"><div class="footer-h">NAVIGATE</div><ul><li><a href="index.html">Index</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="projects.html">Projects</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="f4"><div class="footer-h">COORDINATES</div><ul><li>hello@tecton-eng.com</li><li>INSTAGRAM // @tecton.eng</li><li>FACEBOOK // /tecton.eng</li></ul></div>
+    </div>
+    <div class="footer-bottom"><div class="footer-bottom-inner"><span>© <span id="year"></span> TECTON ENGINEERING &amp; CONSTRUCTION</span><span>BUILT TO ENDURE</span></div></div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
