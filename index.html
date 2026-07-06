@@ -1,220 +1,124 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import { ArrowUpRight, ArrowRight } from "lucide-react";
-import Reveal from "@/components/Reveal";
-
-const HERO = "https://media.base44.com/images/public/6a4bd4a3d244490cb5c55be6/469bf69db_generated_77687324.png";
-
-const stats = [
-  { value: "27", label: "YEARS IN PRACTICE" },
-  { value: "180+", label: "PROJECTS DELIVERED" },
-];
-
-const services = [
-  {
-    n: "01",
-    title: "Structural Engineering",
-    img: "https://media.base44.com/images/public/6a4bd4a3d244490cb5c55be6/0f6a2d760_generated_0e611998.png",
-    desc: "Load-bearing analysis and design for steel, reinforced concrete, and composite systems.",
-    specs: ["LOAD ANALYSIS", "STEEL & RC", "SEISMIC DESIGN"],
-  },
-  {
-    n: "02",
-    title: "Civil & Infrastructure",
-    img: "https://media.base44.com/images/public/6a4bd4a3d244490cb5c55be6/061f614d9_generated_52118220.png",
-    desc: "Site development, earthworks, drainage, and utilities connecting every structure to its ground.",
-    specs: ["SITE DEV", "DRAINAGE", "EARTHWORKS"],
-  },
-  {
-    n: "03",
-    title: "Construction Management",
-    img: "https://media.base44.com/images/public/6a4bd4a3d244490cb5c55be6/ca8f2a78c_generated_299be5f9.png",
-    desc: "End-to-end project controls — scheduling, cost, procurement, and quality assurance.",
-    specs: ["PMC", "COST CONTROL", "QA / QC"],
-  },
-];
-
-const projects = [
-  { title: "Meridian Tower", year: "2024", loc: "Singapore", img: "https://media.base44.com/images/public/6a4bd4a3d244490cb5c55be6/fefc583c7_generated_157d897b.png", span: "lg:col-span-7" },
-  { title: "Aether Crossing", year: "2023", loc: "Norway", img: "https://media.base44.com/images/public/6a4bd4a3d244490cb5c55be6/4e0262abe_generated_6addfd53.png", span: "lg:col-span-5" },
-  { title: "Strata Cultural Center", year: "2022", loc: "Berlin", img: "https://media.base44.com/images/public/6a4bd4a3d244490cb5c55be6/9eec90af6_generated_e54bf16c.png", span: "lg:col-span-5" },
-  { title: "Helix Data Center", year: "2021", loc: "Dublin", img: "https://media.base44.com/images/public/6a4bd4a3d244490cb5c55be6/b7eda550a_generated_c4cbc941.png", span: "lg:col-span-7" },
-];
-
-export default function Home() {
-  const [coords, setCoords] = useState({ x: 0, y: 0 });
-
-  return (
-    <div>
-      {/* HERO */}
-      <section
-        className="relative min-h-[92vh] flex items-end overflow-hidden border-b border-[#E2E2E2]"
-        onMouseMove={(e) => {
-          const r = e.currentTarget.getBoundingClientRect();
-          setCoords({
-            x: Math.round(e.clientX - r.left),
-            y: Math.round(e.clientY - r.top),
-          });
-        }}
-      >
-        <img src={HERO} alt="" className="absolute inset-0 w-full h-full object-cover opacity-60" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#FFFFFF] via-[#FFFFFF]/40 to-[#FFFFFF]/70" />
-
-        {/* coordinate readout */}
-        <div className="hidden md:block absolute top-6 right-6 font-mono text-[11px] tracking-[0.15em] text-[#059E06]">
-          X:{String(coords.x).padStart(4, "0")} / Y:{String(coords.y).padStart(4, "0")}
-        </div>
-
-        {/* grid overlay */}
-        <div className="absolute inset-0 pointer-events-none opacity-[0.15]"
-          style={{ backgroundImage: "linear-gradient(#E2E2E2 1px, transparent 1px), linear-gradient(90deg, #E2E2E2 1px, transparent 1px)", backgroundSize: "8.333% 100%" }} />
-
-        <div className="relative z-10 mx-auto max-w-[1600px] w-full px-6 lg:px-10 pb-16 lg:pb-24">
-          <div className="font-mono text-xs tracking-[0.25em] text-[#059E06] mb-6">
-            // 01 — THE BUILT ENVIRONMENT
-          </div>
-          <h1 className="font-heading font-extrabold uppercase tracking-[-0.02em] leading-[0.9] text-5xl sm:text-7xl lg:text-[8rem]">
-            Engineering<br />the built<br />
-            <span className="text-[#059E06]">world.</span>
-          </h1>
-          <div className="mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-4">
-            <Link
-              to="/contact"
-              className="group inline-flex items-center gap-2 bg-[#059E06] text-[#FFFFFF] px-7 py-4 font-mono text-xs tracking-[0.2em] font-semibold hover:bg-[#0F0F10] transition-colors"
-            >
-              START A PROJECT
-              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-            </Link>
-            <Link
-              to="/projects"
-              className="inline-flex items-center gap-2 border border-[#E2E2E2] text-[#0F0F10] px-7 py-4 font-mono text-xs tracking-[0.2em] hover:border-[#059E06] hover:text-[#059E06] transition-colors"
-            >
-              VIEW WORK
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* STATS */}
-      <section className="border-b border-[#E2E2E2]">
-        <div className="mx-auto max-w-[1600px] px-6 lg:px-10 grid grid-cols-2">
-          {stats.map((s, i) => (
-            <div
-              key={s.label}
-              className={`py-10 lg:py-14 px-2 ${i !== 0 ? "border-l border-[#E2E2E2]" : ""}`}
-            >
-              <div className="font-heading text-4xl lg:text-6xl font-extrabold text-[#0F0F10]">{s.value}</div>
-              <div className="mt-2 font-mono text-[11px] tracking-[0.2em] text-[#6B6B72]">{s.label}</div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* INTRO */}
-      <section className="border-b border-[#E2E2E2]">
-        <div className="mx-auto max-w-[1600px] px-6 lg:px-10 py-20 lg:py-32 grid grid-cols-1 lg:grid-cols-12 gap-10">
-          <div className="lg:col-span-4">
-            <div className="font-mono text-xs tracking-[0.25em] text-[#059E06]">// 02 — PRACTICE</div>
-          </div>
-          <div className="lg:col-span-8">
-            <Reveal>
-              <p className="font-heading text-2xl sm:text-3xl lg:text-4xl leading-[1.2] text-[#0F0F10]">
-                TECTON is an engineering &amp; construction practice built on a
-                single principle — <span className="text-[#6B6B72]">structures should endure.</span> From skeletal
-                steel frames to board-formed concrete, we design and deliver the
-                systems that hold the modern world together.
-              </p>
-            </Reveal>
-            <Reveal delay={0.1}>
-              <Link to="/about" className="mt-10 inline-flex items-center gap-2 font-mono text-xs tracking-[0.2em] text-[#059E06] hover:gap-3 transition-all">
-                READ MORE ABOUT US <ArrowUpRight size={15} />
-              </Link>
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
-      {/* SERVICES PREVIEW */}
-      <section className="border-b border-[#E2E2E2]">
-        <div className="mx-auto max-w-[1600px] px-6 lg:px-10 py-20 lg:py-28">
-          <div className="flex items-end justify-between mb-12">
-            <div>
-              <div className="font-mono text-xs tracking-[0.25em] text-[#059E06]">// 03 — CAPABILITIES</div>
-              <h2 className="mt-3 font-heading text-4xl lg:text-6xl font-extrabold uppercase tracking-[-0.02em]">Services</h2>
-            </div>
-            <Link to="/services" className="hidden sm:inline-flex items-center gap-2 font-mono text-xs tracking-[0.2em] text-[#6B6B72] hover:text-[#059E06] transition-colors">
-              ALL SERVICES <ArrowUpRight size={15} />
-            </Link>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[#E2E2E2]">
-            {services.map((s) => (
-              <div key={s.n} className="group relative bg-[#FFFFFF] overflow-hidden">
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img src={s.img} alt={s.title} className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" />
-                </div>
-                <div className="absolute inset-0 bg-[#FFFFFF]/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
-                  <div className="font-mono text-[11px] tracking-[0.2em] text-[#059E06] space-y-1">
-                    {s.specs.map((sp) => <div key={sp}>— {sp}</div>)}
-                  </div>
-                </div>
-                <div className="p-6 border-t border-[#E2E2E2]">
-                  <div className="flex items-baseline gap-3">
-                    <span className="font-mono text-xs text-[#059E06]">{s.n}</span>
-                    <h3 className="font-heading text-xl font-bold text-[#0F0F10]">{s.title}</h3>
-                  </div>
-                  <p className="mt-3 text-sm text-[#6B6B72] leading-relaxed">{s.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* PROJECTS PREVIEW */}
-      <section className="border-b border-[#E2E2E2]">
-        <div className="mx-auto max-w-[1600px] px-6 lg:px-10 py-20 lg:py-28">
-          <div className="flex items-end justify-between mb-12">
-            <div>
-              <div className="font-mono text-xs tracking-[0.25em] text-[#059E06]">// 04 — ARCHIVE</div>
-              <h2 className="mt-3 font-heading text-4xl lg:text-6xl font-extrabold uppercase tracking-[-0.02em]">Selected Work</h2>
-            </div>
-            <Link to="/projects" className="hidden sm:inline-flex items-center gap-2 font-mono text-xs tracking-[0.2em] text-[#6B6B72] hover:text-[#059E06] transition-colors">
-              ALL PROJECTS <ArrowUpRight size={15} />
-            </Link>
-          </div>
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
-            {projects.map((p) => (
-              <Link key={p.title} to="/projects" className={`group relative overflow-hidden ${p.span}`}>
-                <div className="aspect-[3/2] overflow-hidden">
-                  <img src={p.img} alt={p.title} className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" />
-                </div>
-                <div className="absolute top-4 right-4 font-mono text-[10px] tracking-[0.15em] text-[#0F0F10] bg-[#FFFFFF]/60 px-2 py-1">
-                  {p.year} / {p.loc.toUpperCase()}
-                </div>
-                <div className="absolute bottom-0 inset-x-0 p-5 bg-gradient-to-t from-[#FFFFFF] to-transparent">
-                  <h3 className="font-heading text-2xl font-bold text-[#0F0F10]">{p.title}</h3>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section>
-        <div className="mx-auto max-w-[1600px] px-6 lg:px-10 py-24 lg:py-36 text-center border-b border-[#E2E2E2]">
-          <Reveal>
-            <h2 className="font-heading text-4xl sm:text-6xl lg:text-7xl font-extrabold uppercase tracking-[-0.02em] leading-[0.95]">
-              Have a structure<br />in mind?
-            </h2>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <Link to="/contact" className="mt-10 inline-flex items-center gap-2 bg-[#059E06] text-[#FFFFFF] px-8 py-4 font-mono text-xs tracking-[0.2em] font-semibold hover:bg-[#0F0F10] transition-colors">
-              GET IN TOUCH <ArrowRight size={16} />
-            </Link>
-          </Reveal>
-        </div>
-      </section>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="QB Engineering & Construction — practical engineering and construction solutions delivered with care, clarity and quality.">
+  <title>QB Engineering & Construction | Build with confidence</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="QB Engineering & Construction home">
+        <span class="brand-mark">QB</span><span class="brand-copy">QB Engineering <small>&amp; Construction</small></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false">☰</button>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a class="active" href="index.html">Home</a><a href="about.html">About us</a><a href="services.html">Services</a><a href="projects.html">Projects</a><a href="contact.html">Contact</a>
+      </nav>
     </div>
-  );
-}
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-art" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Engineering · Construction · Project Delivery</p>
+          <h1>Built with precision. Delivered with purpose.</h1>
+          <p>QB Engineering &amp; Construction supports clients with practical, dependable solutions—from early planning through to quality completion.</p>
+          <div class="hero-actions">
+            <a class="btn btn--primary" href="projects.html">View our projects</a>
+            <a class="btn btn--outline" href="contact.html">Start an enquiry</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats" aria-label="Company highlights">
+      <div class="container stats-grid">
+        <article class="stat"><strong>Quality-first</strong><span>Work delivered with care and attention to detail</span></article>
+        <article class="stat"><strong>End-to-end</strong><span>Clear coordination from planning to handover</span></article>
+        <article class="stat"><strong>Client-focused</strong><span>Practical solutions matched to your needs</span></article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container feature-grid">
+        <div class="blueprint" aria-label="Abstract engineering drawing illustration" role="img">
+          <div class="blueprint-badge"><small>Our approach</small><strong>Plan clearly. Build responsibly.</strong></div>
+        </div>
+        <div>
+          <p class="eyebrow">A dependable project partner</p>
+          <h2 class="section-title">Straightforward engineering and construction support.</h2>
+          <p class="section-intro">We work closely with clients, consultants and contractors to keep every project organised, transparent and focused on the result.</p>
+          <div class="checks">
+            <div class="check">Clear scope, timelines and communication throughout the project.</div>
+            <div class="check">A practical mindset that balances quality, cost and site realities.</div>
+            <div class="check">Hands-on coordination to help projects move forward smoothly.</div>
+          </div>
+          <a class="btn btn--blue" href="about.html">Learn about QB</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft">
+      <div class="container">
+        <p class="eyebrow">What we do</p>
+        <h2 class="section-title">Services tailored to the work on the ground.</h2>
+        <p class="section-intro">This starter site uses broad service categories. Replace these with the actual services, certifications and specialisations offered by your company.</p>
+        <div class="card-grid">
+          <article class="service-card">
+            <div class="card-art card-art--construction"><span class="card-number">01 / Construction</span></div>
+            <div class="card-body"><h3>Construction &amp; Renovation</h3><p>Coordinated delivery for building, renovation and improvement works, with quality and site safety kept in view.</p><a class="text-link" href="services.html">Explore service</a></div>
+          </article>
+          <article class="service-card">
+            <div class="card-art card-art--engineering"><span class="card-number">02 / Engineering</span></div>
+            <div class="card-body"><h3>Engineering Support</h3><p>Practical technical support for planning, coordination, assessments and solution development.</p><a class="text-link" href="services.html">Explore service</a></div>
+          </article>
+          <article class="service-card">
+            <div class="card-art card-art--management"><span class="card-number">03 / Delivery</span></div>
+            <div class="card-body"><h3>Project Management</h3><p>Structured coordination across stakeholders, workstreams, schedules and on-site activities.</p><a class="text-link" href="services.html">Explore service</a></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <p class="eyebrow">Selected work</p>
+        <h2 class="section-title">Projects that show how we work.</h2>
+        <p class="section-intro">Use this section to feature completed work with your own photos, project type, location and a short description of the outcome.</p>
+        <div class="project-grid">
+          <article class="project-card">
+            <div class="project-image project-image--one"><span class="status">Featured project</span></div>
+            <div class="card-body"><div class="project-meta"><span>Commercial</span><span>Project portfolio</span></div><h3>Commercial Space Improvement</h3><p>Replace this sample card with an actual completed project, including a photo and brief project summary.</p><a class="text-link" href="projects.html">See all projects</a></div>
+          </article>
+          <article class="project-card">
+            <div class="project-image project-image--two"><span class="status">Featured project</span></div>
+            <div class="card-body"><div class="project-meta"><span>Residential</span><span>Project portfolio</span></div><h3>Residential Enhancement Works</h3><p>Show the project objective, your role and the finished result without sharing sensitive client details.</p><a class="text-link" href="projects.html">See all projects</a></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container section cta-inner">
+        <h2>Have a project in mind? Let’s discuss a practical way forward.</h2>
+        <a class="btn btn--primary" href="contact.html">Contact QB</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div><a class="brand" href="index.html"><span class="brand-mark">QB</span><span class="brand-copy">QB Engineering <small>&amp; Construction</small></span></a><p class="footer-blurb">Practical engineering and construction support, delivered with a focus on quality, clarity and dependable coordination.</p></div>
+      <div><h2 class="footer-title">Explore</h2><nav class="footer-links"><a href="about.html">About us</a><a href="services.html">Services</a><a href="projects.html">Projects</a><a href="contact.html">Contact</a></nav></div>
+      <div><h2 class="footer-title">Contact</h2><div class="footer-links"><a href="mailto:YOUR-EMAIL@example.com">YOUR-EMAIL@example.com</a><span>YOUR PHONE NUMBER</span><span>YOUR CITY / SERVICE AREA</span></div></div>
+    </div>
+    <div class="container footer-bottom"><span>© <span id="year"></span> QB Engineering &amp; Construction. All rights reserved.</span><span>Built for GitHub Pages.</span></div>
+  </footer>
+  <script src="assets/js/script.js"></script><script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

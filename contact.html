@@ -1,128 +1,20 @@
-import { useState } from "react";
-import { Facebook, Instagram, Mail, Send } from "lucide-react";
-import Reveal from "@/components/Reveal";
-
-
-
-export default function Contact() {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [sent, setSent] = useState(false);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setSent(true);
-    setForm({ name: "", email: "", message: "" });
-    setTimeout(() => setSent(false), 4000);
-  };
-
-  return (
-    <div>
-      {/* HEADER */}
-      <section className="border-b border-[#E2E2E2]">
-        <div className="mx-auto max-w-[1600px] px-6 lg:px-10 py-20 lg:py-32">
-          <div className="font-mono text-xs tracking-[0.25em] text-[#059E06]">// CONTACT — TERMINAL</div>
-          <Reveal>
-            <h1 className="mt-4 font-heading text-5xl sm:text-7xl lg:text-[7rem] font-extrabold uppercase tracking-[-0.02em] leading-[0.9]">
-              The<br /><span className="text-[#059E06]">terminal.</span>
-            </h1>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* SPLIT */}
-      <section className="border-b border-[#E2E2E2]">
-        <div className="mx-auto max-w-[1600px] grid grid-cols-1 lg:grid-cols-2">
-          {/* QR SIDE */}
-          <div className="border-b lg:border-b-0 lg:border-r border-[#E2E2E2] p-8 lg:p-16 flex flex-col items-center justify-center text-center">
-            <div className="font-mono text-xs tracking-[0.25em] text-[#059E06] mb-8">// CONNECT</div>
-
-            <div className="w-full max-w-xs space-y-3">
-              <a href="https://instagram.com/tecton.eng" target="_blank" rel="noreferrer" className="flex items-center justify-between border-b border-[#E2E2E2] py-3 font-mono text-xs tracking-[0.15em] text-[#6B6B72] hover:text-[#059E06] transition-colors">
-                <span className="flex items-center gap-2"><Instagram size={14} /> INSTAGRAM</span>
-                <span>@tecton.eng</span>
-              </a>
-              <a href="https://facebook.com/tecton.eng" target="_blank" rel="noreferrer" className="flex items-center justify-between border-b border-[#E2E2E2] py-3 font-mono text-xs tracking-[0.15em] text-[#6B6B72] hover:text-[#059E06] transition-colors">
-                <span className="flex items-center gap-2"><Facebook size={14} /> FACEBOOK</span>
-                <span>/tecton.eng</span>
-              </a>
-              <a href="mailto:hello@tecton-eng.com" className="flex items-center justify-between border-b border-[#E2E2E2] py-3 font-mono text-xs tracking-[0.15em] text-[#6B6B72] hover:text-[#059E06] transition-colors">
-                <span className="flex items-center gap-2"><Mail size={14} /> EMAIL</span>
-                <span>hello@tecton-eng.com</span>
-              </a>
-            </div>
-          </div>
-
-          {/* FORM SIDE */}
-          <div className="p-8 lg:p-16">
-            <div className="font-mono text-xs tracking-[0.25em] text-[#059E06] mb-8">// SEND A MESSAGE</div>
-            <form onSubmit={handleSubmit} className="space-y-8">
-              <div>
-                <label className="font-mono text-[10px] tracking-[0.2em] text-[#6B6B72]">NAME</label>
-                <input
-                  type="text"
-                  required
-                  value={form.name}
-                  onChange={(e) => setForm({ ...form, name: e.target.value })}
-                  className="w-full bg-transparent border-0 border-b border-[#E2E2E2] py-3 text-lg text-[#0F0F10] focus:border-[#059E06] focus:outline-none transition-colors"
-                  placeholder="Your name"
-                />
-              </div>
-              <div>
-                <label className="font-mono text-[10px] tracking-[0.2em] text-[#6B6B72]">EMAIL</label>
-                <input
-                  type="email"
-                  required
-                  value={form.email}
-                  onChange={(e) => setForm({ ...form, email: e.target.value })}
-                  className="w-full bg-transparent border-0 border-b border-[#E2E2E2] py-3 text-lg text-[#0F0F10] focus:border-[#059E06] focus:outline-none transition-colors"
-                  placeholder="you@company.com"
-                />
-              </div>
-              <div>
-                <label className="font-mono text-[10px] tracking-[0.2em] text-[#6B6B72]">MESSAGE</label>
-                <textarea
-                  required
-                  rows={4}
-                  value={form.message}
-                  onChange={(e) => setForm({ ...form, message: e.target.value })}
-                  className="w-full bg-transparent border-0 border-b border-[#E2E2E2] py-3 text-lg text-[#0F0F10] focus:border-[#059E06] focus:outline-none transition-colors resize-none"
-                  placeholder="Tell us about your project..."
-                />
-              </div>
-              <button
-                type="submit"
-                className="group inline-flex items-center gap-2 bg-[#059E06] text-[#FFFFFF] px-8 py-4 font-mono text-xs tracking-[0.2em] font-semibold hover:bg-[#0F0F10] transition-colors"
-              >
-                {sent ? "MESSAGE SENT" : "TRANSMIT"}
-                <Send size={15} className="group-hover:translate-x-1 transition-transform" />
-              </button>
-              {sent && (
-                <p className="font-mono text-xs tracking-[0.15em] text-[#059E06]">
-                  // SIGNAL RECEIVED. WE'LL RESPOND WITHIN 48H.
-                </p>
-              )}
-            </form>
-          </div>
-        </div>
-      </section>
-
-      {/* COORDINATES FOOTER STRIP */}
-      <section>
-        <div className="mx-auto max-w-[1600px] px-6 lg:px-10 py-12 grid grid-cols-1 sm:grid-cols-3 gap-8 font-mono text-xs">
-          <div>
-            <div className="text-[#059E06] tracking-[0.2em] mb-2">STUDIO</div>
-            <div className="text-[#6B6B72] leading-relaxed">12 Foundry Quarter<br />Industrial District</div>
-          </div>
-          <div>
-            <div className="text-[#059E06] tracking-[0.2em] mb-2">HOURS</div>
-            <div className="text-[#6B6B72] leading-relaxed">MON–FRI / 08:00–18:00<br />SAT / BY APPOINTMENT</div>
-          </div>
-          <div>
-            <div className="text-[#059E06] tracking-[0.2em] mb-2">DIRECT</div>
-            <div className="text-[#6B6B72] leading-relaxed">+1 (555) 010-1998<br />hello@tecton-eng.com</div>
-          </div>
-        </div>
-      </section>
-    </div>
-  );
-}
+<!doctype html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Contact QB Engineering & Construction."><title>Contact us | QB Engineering & Construction</title><link rel="stylesheet" href="assets/css/styles.css"></head>
+<body>
+<header class="site-header"><div class="container nav"><a class="brand" href="index.html" aria-label="QB Engineering & Construction home"><span class="brand-mark">QB</span><span class="brand-copy">QB Engineering <small>&amp; Construction</small></span></a><button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false">☰</button><nav class="nav-links" aria-label="Primary navigation"><a href="index.html">Home</a><a href="about.html">About us</a><a href="services.html">Services</a><a href="projects.html">Projects</a><a class="active" href="contact.html">Contact</a></nav></div></header>
+<main>
+<section class="page-hero"><div class="container"><div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Contact</span></div><h1>Let’s discuss your project.</h1><p>Make it straightforward for clients to reach you. This page uses direct email and social links, which work well on a simple GitHub Pages website.</p></div></section>
+<section class="section"><div class="container contact-grid"><div><p class="eyebrow">Get in touch</p><h2 class="section-title">Tell us what you need.</h2><p class="section-intro">For project enquiries, include the location, type of work, expected timeline and any drawings or photos that may help us understand the scope.</p>
+<div class="contact-options">
+<a class="contact-option" href="mailto:YOUR-EMAIL@example.com?subject=Project%20Enquiry%20-%20QB%20Engineering%20%26%20Construction"><span class="contact-icon">@</span><span><strong>Email us</strong><span>YOUR-EMAIL@example.com</span></span></a>
+<a class="contact-option" href="https://www.facebook.com/YOUR-PAGE" target="_blank" rel="noreferrer"><span class="contact-icon">f</span><span><strong>Facebook</strong><span>facebook.com/YOUR-PAGE</span></span></a>
+<a class="contact-option" href="https://www.instagram.com/YOUR-HANDLE" target="_blank" rel="noreferrer"><span class="contact-icon">◎</span><span><strong>Instagram</strong><span>@YOUR-HANDLE</span></span></a>
+<a class="contact-option" href="tel:YOUR-PHONE-NUMBER"><span class="contact-icon">⌕</span><span><strong>Call / WhatsApp</strong><span>YOUR PHONE NUMBER</span></span></a>
+</div></div>
+<aside class="qr-panel"><p class="eyebrow">Quick contact</p><h2>Scan to connect</h2><p>Replace this sample image with a real QR code that opens your WhatsApp chat, Facebook page, Instagram profile or a direct email.</p><div class="qr-wrap"><img src="assets/images/qr-placeholder.svg" alt="Placeholder QR code to be replaced with your company contact QR code"></div><a class="btn btn--blue" href="mailto:YOUR-EMAIL@example.com?subject=Project%20Enquiry%20-%20QB%20Engineering%20%26%20Construction">Email QB</a><div class="notice"><strong>Before going live:</strong> replace every item marked <code>YOUR-...</code>, including the email address, phone number, Facebook page, Instagram handle and QR image.</div></aside>
+</div></section>
+<section class="section section--soft"><div class="container two-col"><article class="panel"><p class="eyebrow">Suggested enquiry details</p><h2>What to ask clients for</h2><div class="checks"><div class="check">Project location and type of property or facility.</div><div class="check">Brief description of the work needed.</div><div class="check">Target timing and any site access limitations.</div><div class="check">Relevant photos, drawings or reference documents.</div></div></article><article class="panel"><p class="eyebrow">Service area</p><h2>YOUR CITY / SERVICE AREA</h2><p>Add the areas you serve here. This helps search visitors decide quickly whether they should enquire.</p><p class="small-copy">Example: “Serving Metro Manila, Cavite and nearby project locations.” Only state areas where you genuinely operate.</p></article></div></section>
+</main>
+<footer class="site-footer"><div class="container footer-grid"><div><a class="brand" href="index.html"><span class="brand-mark">QB</span><span class="brand-copy">QB Engineering <small>&amp; Construction</small></span></a><p class="footer-blurb">Practical engineering and construction support, delivered with a focus on quality, clarity and dependable coordination.</p></div><div><h2 class="footer-title">Explore</h2><nav class="footer-links"><a href="about.html">About us</a><a href="services.html">Services</a><a href="projects.html">Projects</a><a href="contact.html">Contact</a></nav></div><div><h2 class="footer-title">Contact</h2><div class="footer-links"><a href="mailto:YOUR-EMAIL@example.com">YOUR-EMAIL@example.com</a><span>YOUR PHONE NUMBER</span><span>YOUR CITY / SERVICE AREA</span></div></div></div><div class="container footer-bottom"><span>© <span id="year"></span> QB Engineering &amp; Construction. All rights reserved.</span><span>Built for GitHub Pages.</span></div></footer>
+<script src="assets/js/script.js"></script><script>document.getElementById('year').textContent = new Date().getFullYear();</script></body></html>

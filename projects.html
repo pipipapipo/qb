@@ -1,108 +1,19 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { X } from "lucide-react";
-import Reveal from "@/components/Reveal";
-
-const projects = [
-  { title: "Meridian Tower", year: "2024", loc: "Singapore", cat: "High-Rise", img: "https://media.base44.com/images/public/6a4bd4a3d244490cb5c55be6/fefc583c7_generated_157d897b.png", span: "lg:col-span-7", desc: "A 68-storey composite steel-and-glass tower engineered for tropical wind loads and seismic resilience." },
-  { title: "Aether Crossing", year: "2023", loc: "Norway", cat: "Bridge", img: "https://media.base44.com/images/public/6a4bd4a3d244490cb5c55be6/4e0262abe_generated_6addfd53.png", span: "lg:col-span-5", desc: "Cable-stayed bridge spanning a 420m fjord crossing, built to endure arctic conditions." },
-  { title: "Strata Cultural Center", year: "2022", loc: "Berlin", cat: "Cultural", img: "https://media.base44.com/images/public/6a4bd4a3d244490cb5c55be6/9eec90af6_generated_e54bf16c.png", span: "lg:col-span-5", desc: "Board-formed brutalist concrete cultural landmark with long-span column-free galleries." },
-  { title: "Helix Data Center", year: "2021", loc: "Dublin", cat: "Infrastructure", img: "https://media.base44.com/images/public/6a4bd4a3d244490cb5c55be6/b7eda550a_generated_c4cbc941.png", span: "lg:col-span-7", desc: "High-availability data facility with precision structural and thermal engineering." },
-];
-
-export default function Projects() {
-  const [active, setActive] = useState(null);
-
-  return (
-    <div>
-      {/* HEADER */}
-      <section className="border-b border-[#E2E2E2]">
-        <div className="mx-auto max-w-[1600px] px-6 lg:px-10 py-20 lg:py-32">
-          <div className="font-mono text-xs tracking-[0.25em] text-[#059E06]">// PROJECTS — ARCHIVE</div>
-          <Reveal>
-            <h1 className="mt-4 font-heading text-5xl sm:text-7xl lg:text-[7rem] font-extrabold uppercase tracking-[-0.02em] leading-[0.9]">
-              The<br /><span className="text-[#059E06]">archive.</span>
-            </h1>
-          </Reveal>
-          <Reveal delay={0.05}>
-            <p className="mt-8 max-w-2xl text-lg text-[#6B6B72] leading-relaxed">
-              A selection of completed structures. Each one a study in scale,
-              material, and endurance.
-            </p>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* GRID */}
-      <section className="border-b border-[#E2E2E2]">
-        <div className="mx-auto max-w-[1600px] px-6 lg:px-10 py-16 lg:py-24">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
-            {projects.map((p, i) => (
-              <Reveal key={p.title} delay={i * 0.05} className={p.span}>
-                <button
-                  onClick={() => setActive(p)}
-                  className="group relative w-full overflow-hidden text-left"
-                >
-                  <div className="aspect-[3/2] overflow-hidden">
-                    <img src={p.img} alt={p.title} className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" />
-                  </div>
-                  <div className="absolute top-4 right-4 font-mono text-[10px] tracking-[0.15em] text-[#0F0F10] bg-[#FFFFFF]/70 px-2 py-1">
-                    {p.year} / {p.loc.toUpperCase()}
-                  </div>
-                  <div className="absolute bottom-0 inset-x-0 p-5 bg-gradient-to-t from-[#FFFFFF] to-transparent flex items-end justify-between">
-                    <div>
-                      <div className="font-mono text-[10px] tracking-[0.2em] text-[#059E06] mb-1">{p.cat.toUpperCase()}</div>
-                      <h3 className="font-heading text-2xl font-bold text-[#0F0F10]">{p.title}</h3>
-                    </div>
-                  </div>
-                </button>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* STRUCTURAL REVEAL LIGHTBOX */}
-      <AnimatePresence>
-        {active && (
-          <motion.div
-            className="fixed inset-0 z-[100] bg-[#FFFFFF]/95 backdrop-blur-sm flex items-center justify-center p-4 lg:p-10"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setActive(null)}
-          >
-            {/* ruler loading bar */}
-            <motion.div
-              className="absolute bottom-0 left-0 h-1 bg-[#059E06]"
-              initial={{ width: "0%" }}
-              animate={{ width: "100%" }}
-              transition={{ duration: 0.8, ease: "easeInOut" }}
-            />
-            <button className="absolute top-6 right-6 text-[#0F0F10] hover:text-[#059E06]" onClick={() => setActive(null)}>
-              <X size={28} />
-            </button>
-            <motion.div
-              className="relative max-w-5xl w-full grid grid-cols-1 lg:grid-cols-12 gap-6"
-              initial={{ scale: 0.96, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.96, opacity: 0 }}
-              transition={{ duration: 0.4 }}
-              onClick={(e) => e.stopPropagation()}
-            >
-              <div className="lg:col-span-8 overflow-hidden">
-                <img src={active.img} alt={active.title} className="w-full h-full object-cover" />
-              </div>
-              <div className="lg:col-span-4 flex flex-col justify-center">
-                <div className="font-mono text-[11px] tracking-[0.2em] text-[#059E06]">{active.cat.toUpperCase()}</div>
-                <h3 className="mt-3 font-heading text-4xl lg:text-5xl font-extrabold text-[#0F0F10] leading-[0.95]">{active.title}</h3>
-                <div className="mt-4 font-mono text-xs tracking-[0.15em] text-[#6B6B72]">{active.year} / {active.loc.toUpperCase()}</div>
-                <p className="mt-6 text-[#6B6B72] leading-relaxed">{active.desc}</p>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
-  );
-}
+<!doctype html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Project portfolio of QB Engineering & Construction."><title>Projects | QB Engineering & Construction</title><link rel="stylesheet" href="assets/css/styles.css"></head>
+<body>
+<header class="site-header"><div class="container nav"><a class="brand" href="index.html" aria-label="QB Engineering & Construction home"><span class="brand-mark">QB</span><span class="brand-copy">QB Engineering <small>&amp; Construction</small></span></a><button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false">☰</button><nav class="nav-links" aria-label="Primary navigation"><a href="index.html">Home</a><a href="about.html">About us</a><a href="services.html">Services</a><a class="active" href="projects.html">Projects</a><a href="contact.html">Contact</a></nav></div></header>
+<main>
+<section class="page-hero"><div class="container"><div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Projects</span></div><h1>Work that reflects our standards.</h1><p>Your project portfolio is one of the strongest trust-builders on the site. Use your own photos and short, factual summaries of completed work.</p></div></section>
+<section class="section"><div class="container"><p class="eyebrow">Portfolio</p><h2 class="section-title">Selected projects.</h2><p class="section-intro">The cards below are placeholders. Replace each title, category, image and description with completed projects that you are permitted to share.</p>
+<div class="project-grid">
+<article class="project-card"><div class="project-image project-image--one"><span class="status">Replace with photo</span></div><div class="card-body"><div class="project-meta"><span>Commercial</span><span>YEAR / LOCATION</span></div><h3>Commercial Space Improvement</h3><p>Summarise the client requirement, your scope and the delivered outcome in two to three sentences.</p></div></article>
+<article class="project-card"><div class="project-image project-image--two"><span class="status">Replace with photo</span></div><div class="card-body"><div class="project-meta"><span>Residential</span><span>YEAR / LOCATION</span></div><h3>Residential Enhancement Works</h3><p>Example: coordinated targeted repair and enhancement works to improve function, appearance and handover readiness.</p></div></article>
+<article class="project-card"><div class="project-image project-image--three"><span class="status">Replace with photo</span></div><div class="card-body"><div class="project-meta"><span>Industrial</span><span>YEAR / LOCATION</span></div><h3>Facility Upgrade Project</h3><p>Example: supported the phased delivery of upgrade works while helping to minimise operational disruption.</p></div></article>
+<article class="project-card"><div class="project-image project-image--four"><span class="status">Replace with photo</span></div><div class="card-body"><div class="project-meta"><span>External works</span><span>YEAR / LOCATION</span></div><h3>External Works &amp; Improvements</h3><p>Example: delivered site improvement works focused on access, finishes, durability and safe completion.</p></div></article>
+</div></div></section>
+<section class="section section--soft"><div class="container two-col"><article class="panel"><p class="eyebrow">Before uploading project images</p><h2>Use project photos strategically.</h2><div class="checks"><div class="check">Choose one strong overall photo, then add one or two detail images per project later.</div><div class="check">Use images you own or have permission to publish. Avoid identifiable client information where not approved.</div><div class="check">Keep each image under about 1 MB after resizing for faster loading on mobile.</div></div></article><article class="panel"><p class="eyebrow">Suggested project format</p><h2>Keep each case study concise.</h2><p><strong>Project title</strong><br>Project type · year · general location</p><p><strong>Challenge:</strong> What the client needed.</p><p><strong>Scope:</strong> What QB did.</p><p><strong>Outcome:</strong> The practical result delivered.</p></article></div></section>
+<section class="cta"><div class="container section cta-inner"><h2>Planning a similar project? Let’s discuss your requirements.</h2><a class="btn btn--primary" href="contact.html">Contact QB</a></div></section>
+</main>
+<footer class="site-footer"><div class="container footer-grid"><div><a class="brand" href="index.html"><span class="brand-mark">QB</span><span class="brand-copy">QB Engineering <small>&amp; Construction</small></span></a><p class="footer-blurb">Practical engineering and construction support, delivered with a focus on quality, clarity and dependable coordination.</p></div><div><h2 class="footer-title">Explore</h2><nav class="footer-links"><a href="about.html">About us</a><a href="services.html">Services</a><a href="projects.html">Projects</a><a href="contact.html">Contact</a></nav></div><div><h2 class="footer-title">Contact</h2><div class="footer-links"><a href="mailto:YOUR-EMAIL@example.com">YOUR-EMAIL@example.com</a><span>YOUR PHONE NUMBER</span><span>YOUR CITY / SERVICE AREA</span></div></div></div><div class="container footer-bottom"><span>© <span id="year"></span> QB Engineering &amp; Construction. All rights reserved.</span><span>Built for GitHub Pages.</span></div></footer>
+<script src="assets/js/script.js"></script><script>document.getElementById('year').textContent = new Date().getFullYear();</script></body></html>
