@@ -1,18 +1,84 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Learn about QB Engineering & Construction.">
-  <title>About us | QB Engineering & Construction</title><link rel="stylesheet" href="assets/css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — TECTON</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="site-header"><div class="container nav"><a class="brand" href="index.html" aria-label="QB Engineering & Construction home"><span class="brand-mark">QB</span><span class="brand-copy">QB Engineering <small>&amp; Construction</small></span></a><button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false">☰</button><nav class="nav-links" aria-label="Primary navigation"><a href="index.html">Home</a><a class="active" href="about.html">About us</a><a href="services.html">Services</a><a href="projects.html">Projects</a><a href="contact.html">Contact</a></nav></div></header>
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20 L12 4 L20 20"/><path d="M8.5 14 L15.5 14"/></svg></span>
+        <span class="logo-text">TECTON.</span>
+      </a>
+      <button class="nav-toggle" onclick="toggleNav()" aria-label="Menu">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">INDEX</a></li>
+        <li><a href="about.html" class="active">ABOUT</a></li>
+        <li><a href="services.html">SERVICES</a></li>
+        <li><a href="projects.html">PROJECTS</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+      </ul>
+    </div>
+  </header>
+
   <main>
-    <section class="page-hero"><div class="container"><div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>About us</span></div><h1>Built on practical expertise and a commitment to doing the work properly.</h1><p>A concise company story that gives prospective clients confidence in who you are, how you work and what matters to you.</p></div></section>
-    <section class="section"><div class="container two-col"><article class="panel"><p class="eyebrow">Our story</p><h2>About QB Engineering &amp; Construction</h2><p>QB Engineering &amp; Construction is a client-focused engineering and construction company committed to practical solutions, reliable coordination and quality outcomes.</p><p>We approach each project with attention to the details that matter: understanding the scope, managing site realities, communicating clearly and delivering work that meets the intended purpose.</p><p><strong>Replace this paragraph with your real background</strong>—for example, when the company was established, your founders’ experience, the locations you serve and the sectors you focus on.</p></article><article class="panel"><p class="eyebrow">How we work</p><h2>Simple principles, consistently applied.</h2><div class="checks"><div class="check">Understand the client’s requirements before proposing a solution.</div><div class="check">Coordinate carefully so expectations, timing and responsibilities are clear.</div><div class="check">Keep quality, safety and practical site conditions central to decisions.</div><div class="check">Finish responsibly and remain accountable for our work.</div></div></article></div></section>
-    <section class="section section--soft"><div class="container"><p class="eyebrow">What guides us</p><h2 class="section-title">The standards we bring to every engagement.</h2><div class="values"><article class="value-card"><div class="value-icon">01</div><h3>Quality</h3><p>Careful execution, attention to detail and a focus on work that lasts.</p></article><article class="value-card"><div class="value-icon">02</div><h3>Reliability</h3><p>Clear commitments, realistic planning and consistent follow-through.</p></article><article class="value-card"><div class="value-icon">03</div><h3>Partnership</h3><p>Open communication and teamwork with clients, consultants and site partners.</p></article></div></div></section>
-    <section class="cta"><div class="container section cta-inner"><h2>Let’s talk about your next engineering or construction requirement.</h2><a class="btn btn--primary" href="contact.html">Contact QB</a></div></section>
+    <section>
+      <div class="container section">
+        <div class="eyebrow">// ABOUT — 01</div>
+        <h1 class="h1 reveal" style="margin-top:16px">Built to<br /><span style="color:var(--accent)">endure.</span></h1>
+      </div>
+    </section>
+
+    <section>
+      <div class="container section split-12">
+        <div class="col-4">
+          <div class="mono" style="font-size:12px;letter-spacing:.25em;color:var(--muted)">EST. 1998</div>
+          <div class="mono" style="font-size:12px;letter-spacing:.25em;color:var(--muted);margin-top:8px">HQ — GLOBAL</div>
+        </div>
+        <div class="col-8" style="font-size:20px;line-height:1.6">
+          <p class="reveal">Founded in 1998, TECTON is an engineering and construction practice built on a single principle: structures should endure. From skeletal steel frames to board-formed concrete, we design and deliver the systems that hold the modern world together.</p>
+          <p class="muted reveal" style="margin-top:24px">Our work spans skyscrapers, bridges, cultural landmarks, and critical infrastructure across twelve countries — each one measured against the same standard of structural integrity. We treat the viewport as a blueprint in motion, where every element is load-bearing.</p>
+          <p class="muted reveal" style="margin-top:24px">We are engineers, builders, and problem-solvers. We do not chase the safety-yellow cliché. We pursue the art of building — cold, precise, monumental.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container section">
+        <div class="eyebrow" style="margin-bottom:40px">// PRINCIPLES</div>
+        <div class="grid2">
+          <div class="cell reveal"><span class="num">01</span><h3>Precision</h3><p>Every dimension calculated, every joint accounted for. Tolerances measured in millimetres.</p></div>
+          <div class="cell reveal"><span class="num">02</span><h3>Material Integrity</h3><p>We specify the right material for the load — steel, concrete, glass — never compromise.</p></div>
+          <div class="cell reveal"><span class="num">03</span><h3>Endurance</h3><p>We design for the next century, not the next quarter. Structures that outlast trends.</p></div>
+          <div class="cell reveal"><span class="num">04</span><h3>Accountability</h3><p>From groundbreaking to handover, we own the outcome. Budget, schedule, quality.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container section" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px">
+        <p style="font-size:24px;font-weight:600">See what we've built.</p>
+        <a href="projects.html" class="btn btn-outline">VIEW PROJECTS →</a>
+      </div>
+    </section>
   </main>
-  <footer class="site-footer"><div class="container footer-grid"><div><a class="brand" href="index.html"><span class="brand-mark">QB</span><span class="brand-copy">QB Engineering <small>&amp; Construction</small></span></a><p class="footer-blurb">Practical engineering and construction support, delivered with a focus on quality, clarity and dependable coordination.</p></div><div><h2 class="footer-title">Explore</h2><nav class="footer-links"><a href="about.html">About us</a><a href="services.html">Services</a><a href="projects.html">Projects</a><a href="contact.html">Contact</a></nav></div><div><h2 class="footer-title">Contact</h2><div class="footer-links"><a href="mailto:YOUR-EMAIL@example.com">YOUR-EMAIL@example.com</a><span>YOUR PHONE NUMBER</span><span>YOUR CITY / SERVICE AREA</span></div></div></div><div class="container footer-bottom"><span>© <span id="year"></span> QB Engineering &amp; Construction. All rights reserved.</span><span>Built for GitHub Pages.</span></div></footer>
-  <script src="assets/js/script.js"></script><script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-</body></html>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="f5"><div class="logo-text">TECTON.</div><p>Engineering &amp; construction. We build structural legacies with precision, scale, and material integrity.</p></div>
+      <div class="f3"><div class="footer-h">NAVIGATE</div><ul><li><a href="index.html">Index</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="projects.html">Projects</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="f4"><div class="footer-h">COORDINATES</div><ul><li>hello@tecton-eng.com</li><li>INSTAGRAM // @tecton.eng</li><li>FACEBOOK // /tecton.eng</li></ul></div>
+    </div>
+    <div class="footer-bottom"><div class="footer-bottom-inner"><span>© <span id="year"></span> TECTON ENGINEERING &amp; CONSTRUCTION</span><span>BUILT TO ENDURE</span></div></div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
