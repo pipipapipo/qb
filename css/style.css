@@ -488,6 +488,11 @@ a {
   background: #ffffff;
 }
 
+/* Push only the left contact details lower */
+.contact-panel:first-child .contact-row:first-of-type {
+  margin-top: 72px;
+}
+
 .map-box {
   width: 100%;
   height: 380px;
