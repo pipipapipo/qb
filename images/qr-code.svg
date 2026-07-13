@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 500 500">
+  <rect width="500" height="500" fill="#fff"/>
+  <rect x="45" y="45" width="120" height="120" fill="#0f0f10"/><rect x="75" y="75" width="60" height="60" fill="#fff"/>
+  <rect x="335" y="45" width="120" height="120" fill="#0f0f10"/><rect x="365" y="75" width="60" height="60" fill="#fff"/>
+  <rect x="45" y="335" width="120" height="120" fill="#0f0f10"/><rect x="75" y="365" width="60" height="60" fill="#fff"/>
+  <g fill="#059E06">
+    <rect x="210" y="60" width="35" height="35"/><rect x="260" y="60" width="35" height="35"/><rect x="210" y="110" width="85" height="35"/>
+    <rect x="205" y="205" width="35" height="35"/><rect x="255" y="205" width="85" height="35"/><rect x="370" y="205" width="35" height="35"/>
+    <rect x="205" y="255" width="35" height="85"/><rect x="270" y="280" width="35" height="35"/><rect x="335" y="255" width="85" height="35"/>
+    <rect x="205" y="390" width="35" height="35"/><rect x="260" y="355" width="35" height="70"/><rect x="325" y="340" width="35" height="35"/><rect x="390" y="370" width="65" height="35"/>
+  </g>
+  <text x="250" y="485" text-anchor="middle" font-family="Arial" font-size="20" font-weight="700" fill="#767676">Replace with real QR</text>
+</svg>
