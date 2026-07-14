@@ -484,14 +484,14 @@ a {
 
 /* 1. Thicker green border (#059E06) */
 .contact-panel {
-  border: 4px solid #059E06; 
+  border: 4px solid #059E06 !important; 
   padding: 48px;
   background: #ffffff;
 }
 
 /* Add space directly below the REACH US title */
 .section-title {
-  margin-bottom: 4rem; 
+  margin-bottom: 5rem; 
 }
 
 /* 2. Apply Flexbox, grey divider lines, and vertical spacing */
@@ -499,8 +499,8 @@ a {
   display: flex;
   justify-content: space-between; 
   align-items: center; 
-  margin-bottom: 1.25rem; /* Increased spacing */
-  padding-bottom: 1.25rem; /* Space between text and the line */
+  margin-bottom: 2rem; /* Increased spacing */
+  padding-bottom: 2rem; /* Space between text and the line */
   border-bottom: 1px solid #e5e5e5; /* The light grey line */
   width: 100%; 
 }
