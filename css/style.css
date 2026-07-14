@@ -493,6 +493,15 @@ a {
   margin-top: 72px;
 }
 
+/* Optional: Ensure text alignment within the flex items just in case */
+.contact-row span {
+    display: flex;
+  justify-content: space-between; /* This pushes the span left and the 'a' tag right */
+  align-items: center; /* Keeps them vertically aligned with each other */
+  margin-bottom: 1rem; /* Adds some breathing room between each row */
+  width: 100%; /* Ensures the row takes up the full width of the contact panel */
+}
+
 .map-box {
   width: 100%;
   height: 380px;
