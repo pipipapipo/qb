@@ -410,7 +410,7 @@ a {
   text-transform: uppercase;
 }
 
-/* PAGE HERO */
+/* PAGE HERO & ABOUT US */
 .page-hero {
   padding: 100px 0 70px;
   background: var(--soft);
@@ -429,9 +429,10 @@ a {
   gap: 18px;
 }
 
+/* Updated: Green thicker border for Core Value boxes */
 .value-item {
   padding: 24px;
-  border: 1px solid var(--line);
+  border: 4px solid var(--green) !important;
 }
 
 .value-item h3 {
@@ -442,6 +443,13 @@ a {
 .value-item p {
   margin: 0;
   color: var(--muted);
+}
+
+/* New: Pushes Mission lower and adds the divider line */
+.mission-block {
+  margin-top: 3rem; 
+  padding-top: 3rem; 
+  border-top: 1px solid var(--line); 
 }
 
 .service-list {
@@ -482,49 +490,42 @@ a {
   align-items: stretch;
 }
 
-/* 1. Thicker green border (#059E06) */
 .contact-panel {
   border: 4px solid #059E06 !important; 
   padding: 48px;
   background: #ffffff;
 }
 
-/* Add space directly below the REACH US title */
 .section-title {
   margin-bottom: 5rem; 
 }
 
-/* 2. Apply Flexbox, grey divider lines, and vertical spacing */
 .contact-row {
   display: flex;
   justify-content: space-between; 
   align-items: center; 
-  margin-bottom: 2rem; /* Increased spacing */
-  padding-bottom: 2rem; /* Space between text and the line */
-  border-bottom: 1px solid #e5e5e5; /* The light grey line */
+  margin-bottom: 2rem; 
+  padding-bottom: 2rem; 
+  border-bottom: 1px solid #e5e5e5; 
   width: 100%; 
 }
 
-/* Removes the divider line from the very last row */
 .contact-row:last-of-type {
   border-bottom: none;
   margin-bottom: 0;
   padding-bottom: 0;
 }
 
-/* Text alignment for the specific items inside the row */
 .contact-row span {
   text-align: left;
 }
 
-/* 3. Underline default state */
 .contact-row a {
   text-align: right;
   text-decoration: underline; 
-  color: #333; /* Keeps the text dark instead of default link blue */
+  color: #333; 
 }
 
-/* 3. Bold and remove underline on hover */
 .contact-row a:hover {
   text-decoration: none;
   font-weight: bold;
@@ -543,85 +544,6 @@ a {
   height: 100%;
   border: 0;
   display: block;
-}
-
-@media (max-width: 900px) {
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .contact-panel {
-    padding: 32px 24px;
-  }
-
-  .map-box {
-    height: 300px;
-  }
-}/* CONTACT */
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.4fr;
-  gap: 40px;
-  align-items: stretch;
-}
-
-.contact-panel {
-  border: 1px solid #e5e5e5;
-  padding: 48px;
-  background: #ffffff;
-}
-
-/* 1. Add space directly below the REACH US title */
-.section-title {
-  margin-bottom: 3rem; /* Pushes everything down. Adjust this number if you need more/less space */
-}
-
-/* 2. Apply Flexbox to the container holding both text elements */
-.contact-row {
-  display: flex;
-  justify-content: space-between; 
-  align-items: center; 
-  margin-bottom: 1rem; 
-  width: 100%; 
-}
-
-/* 3. Text alignment for the specific items inside the row */
-.contact-row span {
-  text-align: left;
-}
-
-.contact-row a {
-  text-align: right;
-  text-decoration: none; /* Optional: removes underline */
-}
-
-.map-box {
-  width: 100%;
-  height: 380px;
-  margin-top: 24px;
-  overflow: hidden;
-  border: 1px solid #e5e5e5;
-}
-
-.map-box iframe {
-  width: 100%;
-  height: 100%;
-  border: 0;
-  display: block;
-}
-
-@media (max-width: 900px) {
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .contact-panel {
-    padding: 32px 24px;
-  }
-
-  .map-box {
-    height: 300px;
-  }
 }
 
 /* FOOTER */
@@ -740,6 +662,14 @@ a {
 
   .section-header .button {
     margin-top: 22px;
+  }
+
+  .contact-panel {
+    padding: 32px 24px;
+  }
+
+  .map-box {
+    height: 300px;
   }
 }
 
