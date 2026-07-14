@@ -488,18 +488,28 @@ a {
   background: #ffffff;
 }
 
-/* Push only the left contact details lower */
-.contact-panel:first-child .contact-row:first-of-type {
-  margin-top: 72px;
+/* 1. Add space directly below the REACH US title */
+.section-title {
+  margin-bottom: 3rem; /* Pushes everything down. Adjust this number if you need more/less space */
 }
 
-/* Optional: Ensure text alignment within the flex items just in case */
+/* 2. Apply Flexbox to the container holding both text elements */
+.contact-row {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  margin-bottom: 1rem; 
+  width: 100%; 
+}
+
+/* 3. Text alignment for the specific items inside the row */
 .contact-row span {
-    display: flex;
-  justify-content: space-between; /* This pushes the span left and the 'a' tag right */
-  align-items: center; /* Keeps them vertically aligned with each other */
-  margin-bottom: 1rem; /* Adds some breathing room between each row */
-  width: 100%; /* Ensures the row takes up the full width of the contact panel */
+  text-align: left;
+}
+
+.contact-row a {
+  text-align: right;
+  text-decoration: none; /* Optional: removes underline */
 }
 
 .map-box {
